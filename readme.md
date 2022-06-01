@@ -21,7 +21,7 @@ php cmd/run.php
 ### Contributors
 * [@Aleksandra](https://github.com/AleksandraKozubal)
 * Dagmara **[Github](https://github.com/dagmaraskulimowska)**.
-* Oskar **[@github](https://github.com/Oskar-Dabrowski)**.
+* [Oskar](https://github.com/Oskar-Dabrowski).
 
 ### Contributing
 There are scripts available for package codestyle checking and testing:
