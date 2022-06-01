@@ -16,7 +16,6 @@ php cmd/run.php
 
 ### Contributors
 * Aleksandra
-* Dagmara
 * Dagmara **[Github](https://github.com/dagmaraskulimowska)**.
 * Oskar
 
