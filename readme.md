@@ -15,7 +15,7 @@ php cmd/run.php
 ```
 
 ### Contributors
-* Aleksandra
+* Aleksandra **[@github](https://github.com/AleksandraKozubal)**
 * Dagmara
 * Oskar
 
