@@ -24,11 +24,19 @@ try {
 $option = $climate->radio("Choose data to fetch:", [
     GithubScrapper::LOCATION => "organization location",
     GithubScrapper::URL => "repository URL",
+    GithubScrapper::WEB => "website",
+    GithubScrapper::TWITTER => "twitter",
+    GithubScrapper::EMAIL => "email",
+    GithubScrapper::VERIFICATION => "verification",
 ])->prompt();
 
 $result = match ($option) {
     GithubScrapper::LOCATION => $scrapper->getLocation(),
     GithubScrapper::URL => $scrapper->getRepositoryURL(),
+    GithubScrapper::WEB => $scrapper->getWebsite(),
+    GithubScrapper::TWITTER => $scrapper->getTwitter(),
+    GithubScrapper::EMAIL => $scrapper->getEmail(),
+    GithubScrapper::VERIFICATION => $scrapper->getVerification(),
     default => "unknown option"
 };
 
