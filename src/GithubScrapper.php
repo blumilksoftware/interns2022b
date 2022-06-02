@@ -41,7 +41,8 @@ class GithubScrapper
         return "https://github.com/" . $this->name;
     }
 
-    public function getWebsite(): string {
+    public function getWebsite(): string
+    {
         $node_web = $this->crawler->filterXPath("//a[@rel='nofollow']")->first();
         return $node_web->count() ? $node_web->html() : "unknown";
     }
@@ -51,14 +52,15 @@ class GithubScrapper
         return "https://twitter.com/" . $this->name;
     }
 
-   public function getEmail(): string {
+    public function getEmail(): string
+    {
         $node_email = $this->crawler->filterXPath("//a[@itemprop='email']")->first();
         return $node_email->count() ? $node_email->html() : "unknown";
     }
 
-    public function getVerification(): string {
+    public function getVerification(): string
+    {
         $node_verification = $this->crawler->filterXPath("//summary[@title='Label: Verified']")->first();
         return $node_verification->count() ? $node_verification->html() : "not verified";
     }
-
 }
