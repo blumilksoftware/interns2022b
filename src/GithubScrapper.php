@@ -43,24 +43,25 @@ class GithubScrapper
 
     public function getWebsite(): string
     {
-        $node_web = $this->crawler->filterXPath("//a[@rel='nofollow']")->first();
-        return $node_web->count() ? $node_web->html() : "unknown";
+        $nodeWeb = $this->crawler->filterXPath("//a[@rel='nofollow']")->first();
+        return $nodeWeb->count() ? $nodeWeb->html() : "unknown";
     }
 
     public function getTwitter(): string
     {
-        return "https://twitter.com/" . $this->name;
+        $nodeTwitter = $this->crawler->filterXPath("//a[contains(@href, 'twitter')]")->first();
+        return $nodeTwitter->count() ? $nodeTwitter->html() : "unknown";
     }
 
     public function getEmail(): string
     {
-        $node_email = $this->crawler->filterXPath("//a[@itemprop='email']")->first();
-        return $node_email->count() ? $node_email->html() : "unknown";
+        $nodeEmail = $this->crawler->filterXPath("//a[@itemprop='email']")->first();
+        return $nodeEmail->count() ? $nodeEmail->html() : "unknown";
     }
 
     public function getVerification(): string
     {
-        $node_verification = $this->crawler->filterXPath("//summary[@title='Label: Verified']")->first();
-        return $node_verification->count() ? $node_verification->html() : "not verified";
+        $nodeVerification = $this->crawler->filterXPath("//summary[@title='Label: Verified']")->first();
+        return $nodeVerification->count() ? $nodeVerification->html() : "not verified";
     }
 }
