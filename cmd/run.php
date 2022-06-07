@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use Interns2022B\BreweryScrapper;
 use Interns2022B\GithubScrapper;
 use League\CLImate\CLImate;
 
@@ -41,3 +42,24 @@ $result = match ($option) {
 };
 
 $climate->out($result);
+
+$climateBrewery = new CLImate();
+$nameBrewery = $climateBrewery->input("Please provide brewery or city name:")->prompt();
+$scrapperBrewery = new BreweryScrapper($nameBrewery, new Client());
+echo PHP_EOL;
+$scrapperBrewery->getShowLabel($nameBrewery);
+while (true) {
+    $optionBrewery = $climateBrewery->radio(PHP_EOL . "Choose data to fetch:", [
+        BreweryScrapper::LIST => "showing a list of providers",
+        BreweryScrapper::CLEAR => "clearing cache",
+        BreweryScrapper::EXIT => "Exit",
+    ])->prompt();
+
+    $resultBrewery = match ($optionBrewery) {
+        BreweryScrapper::LIST => $scrapperBrewery->getList(),
+        BreweryScrapper::CLEAR => $scrapperBrewery->getClear(),
+        BreweryScrapper::EXIT => $scrapperBrewery->getExit(),
+    default => "unknown option",
+    };
+    $climateBrewery->out($resultBrewery);
+}
