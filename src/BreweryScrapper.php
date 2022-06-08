@@ -52,7 +52,7 @@ class BreweryScrapper
         if (unlink($handle)) {
             $climate->green("File was deleted successfully");
         } else {
-            $climate->red('Error');
+            $climate->red("Error");
         }
     }
 }
