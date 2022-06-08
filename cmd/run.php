@@ -38,28 +38,30 @@ $result = match ($option) {
     GithubScrapper::TWITTER => $scrapper->getTwitter(),
     GithubScrapper::EMAIL => $scrapper->getEmail(),
     GithubScrapper::VERIFICATION => $scrapper->getVerification(),
-    default => "unknown option"
+    default => $climate->error("unknown option"),
 };
 
 $climate->out($result);
 
-$climateBrewery = new CLImate();
-$nameBrewery = $climateBrewery->input("Please provide brewery or city name:")->prompt();
-$scrapperBrewery = new BreweryScrapper($nameBrewery, new Client());
-echo PHP_EOL;
-$scrapperBrewery->getShowLabel($nameBrewery);
+$breweryName = $climate->input("Please provide brewery or city name:")->prompt();
+$breweryScrapper = new BreweryScrapper($breweryName, new Client());
+$climate->br();
+$breweryScrapper->dataToArray();
+$breweryScrapper->getShowLabel($breweryName);
+
 while (true) {
-    $optionBrewery = $climateBrewery->radio(PHP_EOL . "Choose data to fetch:", [
+    $climate->br();
+    $breweryOption = $climate->radio("Choose data to fetch:", [
         BreweryScrapper::LIST => "showing a list of providers",
         BreweryScrapper::CLEAR => "clearing cache",
-        BreweryScrapper::EXIT => "Exit",
+        BreweryScrapper::EXIT => "exit",
     ])->prompt();
 
-    $resultBrewery = match ($optionBrewery) {
-        BreweryScrapper::LIST => $scrapperBrewery->getList(),
-        BreweryScrapper::CLEAR => $scrapperBrewery->getClear(),
-        BreweryScrapper::EXIT => $scrapperBrewery->getExit(),
-    default => "unknown option",
+    $beweryResult = match ($breweryOption) {
+        BreweryScrapper::LIST => $breweryScrapper->getList(),
+        BreweryScrapper::CLEAR => $breweryScrapper->getClear(),
+        EXIT => $climate->exit(),
+        default => $climate->error("unknown option"),
     };
-    $climateBrewery->out($resultBrewery);
+    $climate->out($breweryResult);
 }

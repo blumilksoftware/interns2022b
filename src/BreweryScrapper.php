@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 namespace Interns2022B;
+use League\CLImate\CLImate;
+require_once __DIR__ . "/../vendor/autoload.php";
 
 class BreweryScrapper
 {
@@ -11,41 +13,46 @@ class BreweryScrapper
     public const CLEAR = "clear";
     public const EXIT = "exit";
 
+    public $allRecords = [];
+
+    public function dataToArray(): void
+    {
+        $data = [];
+        $handle = fopen(__DIR__ . "/../tests/stubs/table.csv", "r");
+
+        while (($data = fgetcsv($handle, null, ";")) !== false) {
+            $this->allRecords[] = $data;
+        }
+        fclose($handle);
+    }
+
     public function getShowLabel($name): void
     {
-        $lines = file(__DIR__ . "/../tests/stubs/table.txt");
-        $found = false;
-        foreach ($lines as $line) {
-            if (strpos($line, $name) !== false) {
-                $found = true;
-                echo $line;
+        $choosenData = [];
+        $climate = new CLImate();
+        for ($row = 0; $row < 3; $row++) {
+            if (in_array($name, $this -> allRecords[$row], true)) {
+                $choosenData[] = $this->allRecords[$row];
             }
-        }
-        if (!$found) {
-            echo "No match found";
-        }
+        }  
+        $climate -> table($choosenData);
     }
 
     public function getList(): void
     {
-        $lines = file(__DIR__ . "/../tests/stubs/table.txt");
-        foreach ($lines as $line) {
-            $parts = explode("|", $line);
-            if (isset($parts[0]) && $parts[5] !== "Provider ") {
-                echo $parts[5];
-            } else {
-                echo " ";
-            }
+        for ($row = 1; $row < 3; $row++) {
         }
     }
 
     public function getClear(): void
     {
-        opcache_reset();
-    }
-
-    public function getExit(): string
-    {
-        exit();
+        $climate = new CLImate();
+        $handle = __DIR__ . "/../tests/stubs/table.csv";
+        $climate->br();
+        if (unlink($handle)) {
+            $climate->green("File was deleted successfully");
+        } else {
+            $climate->red('\nError');
+        }
     }
 }
