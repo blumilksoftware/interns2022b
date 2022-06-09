@@ -3,8 +3,6 @@
 declare(strict_types=1);
 
 namespace Interns2022B;
-use League\CLImate\CLImate;
-require_once __DIR__ . "/../vendor/autoload.php";
 
 class BreweryScrapper
 {
@@ -13,46 +11,59 @@ class BreweryScrapper
     public const CLEAR = "clear";
     public const EXIT = "exit";
 
-    public $allRecords = [];
+    public array $allRecords = [];
+    public array $data = [];
 
-    public function dataToArray(): void
+    public function dataToArray(string $name): array
     {
-        $data = [];
+        $choosenData = []; 
         $handle = fopen(__DIR__ . "/../tests/stubs/table.csv", "r");
+        $headers = [];
+        $i = 0;
 
-        while (($data = fgetcsv($handle, null, ";")) !== false) {
-            $this->allRecords[] = $data;
-        }
-        fclose($handle);
-    }
-
-    public function getShowLabel($name): void
-    {
-        $choosenData = [];
-        $climate = new CLImate();
-        for ($row = 0; $row < 3; $row++) {
-            if (in_array($name, $this -> allRecords[$row], true)) {
-                $choosenData[] = $this->allRecords[$row];
+        while (($row = fgetcsv($handle, null, ";")) !== false) {
+            if ($i === 0) {
+                $headers = $row;
+                $i++;
+                continue;
             }
-        }  
-        $climate -> table($choosenData);
+            $rowValues = [];
+            foreach ($headers as $key => $value) {
+                $rowValues[$headers[$key]] = $row[$key];
+            }
+            $this->data[] = $rowValues;
+
+            $i++;
+        }
+
+        for ($row = 0; $row < 2; $row++) {
+            if (in_array($name, $this->data[$row], strict: true)) {
+                $choosenData[] = $this->data[$row];
+            }
+        }
+
+        fclose($handle);
+
+        return $choosenData;
     }
 
-    public function getList(): void
+    public function getList(): array
     {
-        for ($row = 1; $row < 3; $row++) {
+        $providers = [];
+        for ($row = 0; $row < 2; $row++) {
+            $providers[] = $this->data[$row]["Provider"];
         }
+
+        return $providers;
     }
 
     public function getClear(): void
     {
-        $climate = new CLImate();
         $handle = __DIR__ . "/../tests/stubs/table.csv";
-        $climate->br();
         if (unlink($handle)) {
-            $climate->green("File was deleted successfully");
+            echo "File was deleted successfully";
         } else {
-            $climate->red("Error");
+            echo "File doesn't exist";
         }
     }
 }
