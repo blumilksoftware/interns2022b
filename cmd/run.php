@@ -1,14 +1,16 @@
 <?php
 
 declare(strict_types=1);
+
 use Interns2022B\BreweryScrapper;
 use League\CLImate\CLImate;
+
 require_once __DIR__ . "/../vendor/autoload.php";
+
 $climate = new CLImate();
 $climate->green("Wow! My first simple PHP CLI application works!");
 
 $breweryScrapper = new BreweryScrapper();
-
 $breweryScrapper->collectData();
 
 while (true) {
