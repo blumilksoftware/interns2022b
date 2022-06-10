@@ -2,42 +2,31 @@
 
 declare(strict_types=1);
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
-use Interns2022B\GithubScrapper;
+use Interns2022B\BreweryScrapper;
 use League\CLImate\CLImate;
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
 $climate = new CLImate();
-
 $climate->green("Wow! My first simple PHP CLI application works!");
-$name = $climate->input("Please type a Github organization name:")->prompt();
 
-try {
-    $scrapper = new GithubScrapper($name, new Client());
-} catch (GuzzleException) {
-    $climate->red("Requested organization does not exist!");
-    die();
+$breweryScrapper = new BreweryScrapper();
+$breweryScrapper->collectData();
+
+while (true) {
+    $climate->br();
+    $breweryOption = $climate->radio("Choose data to fetch:", [
+        BreweryScrapper::SEARCH => "searching by brewery or city name",
+        BreweryScrapper::LIST => "showing a list of providers",
+        BreweryScrapper::CLEAR => "clearing cache",
+        BreweryScrapper::EXIT => "exit",
+    ])->prompt();
+
+    match ($breweryOption) {
+        BreweryScrapper::SEARCH => $climate->table($breweryScrapper->getBreweries()),
+        BreweryScrapper::LIST => $climate->out($breweryScrapper->getProviders()),
+        BreweryScrapper::CLEAR => $climate->out($breweryScrapper->clearCache()),
+        BreweryScrapper::EXIT => exit(),
+        default => $climate->error("unknown option"),
+    };
 }
-
-$option = $climate->radio("Choose data to fetch:", [
-    GithubScrapper::LOCATION => "organization location",
-    GithubScrapper::URL => "repository URL",
-    GithubScrapper::WEB => "website",
-    GithubScrapper::TWITTER => "twitter",
-    GithubScrapper::EMAIL => "email",
-    GithubScrapper::VERIFICATION => "verification",
-])->prompt();
-
-$result = match ($option) {
-    GithubScrapper::LOCATION => $scrapper->getLocation(),
-    GithubScrapper::URL => $scrapper->getRepositoryURL(),
-    GithubScrapper::WEB => $scrapper->getWebsite(),
-    GithubScrapper::TWITTER => $scrapper->getTwitter(),
-    GithubScrapper::EMAIL => $scrapper->getEmail(),
-    GithubScrapper::VERIFICATION => $scrapper->getVerification(),
-    default => "unknown option"
-};
-
-$climate->out($result);

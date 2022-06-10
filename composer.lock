@@ -1078,21 +1078,21 @@
     "packages-dev": [
         {
             "name": "blumilksoftware/codestyle",
-            "version": "v1.3.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blumilksoftware/codestyle.git",
-                "reference": "bf694da19f2cd5d0575b8fad585d3570d6785c23"
+                "reference": "bc7c99f466bd729658e30e455c55ca172acf57e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blumilksoftware/codestyle/zipball/bf694da19f2cd5d0575b8fad585d3570d6785c23",
-                "reference": "bf694da19f2cd5d0575b8fad585d3570d6785c23",
+                "url": "https://api.github.com/repos/blumilksoftware/codestyle/zipball/bc7c99f466bd729658e30e455c55ca172acf57e3",
+                "reference": "bc7c99f466bd729658e30e455c55ca172acf57e3",
                 "shasum": ""
             },
             "require": {
                 "friendsofphp/php-cs-fixer": "^3.8.0",
-                "kubawerlos/php-cs-fixer-custom-fixers": "^3.10.1",
+                "kubawerlos/php-cs-fixer-custom-fixers": "^3.11.0",
                 "php": "^8.0"
             },
             "require-dev": {
@@ -1122,9 +1122,9 @@
             "description": "Blumilk codestyle configurator",
             "support": {
                 "issues": "https://github.com/blumilksoftware/codestyle/issues",
-                "source": "https://github.com/blumilksoftware/codestyle/tree/v1.3.0"
+                "source": "https://github.com/blumilksoftware/codestyle/tree/v1.5.0"
             },
-            "time": "2022-05-10T09:41:53+00:00"
+            "time": "2022-06-09T06:44:36+00:00"
         },
         {
             "name": "composer/pcre",
