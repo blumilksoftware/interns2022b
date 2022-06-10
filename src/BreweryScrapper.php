@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 namespace Interns2022B;
-
 class BreweryScrapper
 {
+    public const SEARCH = "choice";
     public const SHOW = "show";
     public const LIST = "list";
     public const CLEAR = "clear";
@@ -13,56 +13,55 @@ class BreweryScrapper
 
     public array $data = [];
 
-    public function dataToArray(string $name): array
+    public function collectData(): void
     {
-        $choosenData = []; 
         $handle = fopen(__DIR__ . "/../tests/stubs/table.csv", "r");
-        $headers = [];
-        $i = 0;
+        $headers = fgetcsv($handle, separator: ";");
 
-        while (($row = fgetcsv($handle, null, ";")) !== false) {
-            if ($i === 0) {
-                $headers = $row;
-                $i++;
-                continue;
-            }
+        while (($row = fgetcsv($handle, separator: ";")) !== false) {
             $rowValues = [];
             foreach ($headers as $key => $value) {
                 $rowValues[$headers[$key]] = $row[$key];
             }
-            $this->data[] = $rowValues;
 
-            $i++;
+            $this->data[] = $rowValues;
         }
 
-        for ($row = 0; $row < 2; $row++) {
+        fclose($handle);
+    }
+
+    public function getBreweries(): array
+    {
+        $name = readline("Please provide brewery or city name:");
+
+        $choosenData = [];
+        for ($row = 0; $row < count($this->data); $row++) {
             if (in_array($name, $this->data[$row], strict: true)) {
                 $choosenData[] = $this->data[$row];
             }
         }
-
-        fclose($handle);
-
         return $choosenData;
-    }
+    }    
 
-    public function getList(): array
+    public function getProviders(): array
     {
         $providers = [];
-        for ($row = 0; $row < 2; $row++) {
+        for ($row = 0; $row < count($this->data); $row++) {
             $providers[] = $this->data[$row]["Provider"];
         }
-
         return $providers;
     }
 
-    public function getClear(): void
+    public function clearCache(): string
     {
         $handle = __DIR__ . "/../tests/stubs/table.csv";
+
         if (unlink($handle)) {
-            echo "File was deleted successfully";
+            $message = "File was deleted successfully";
         } else {
-            echo "File doesn't exist";
+            $message = "File doesn't exist";
         }
+
+        return $message;
     }
 }
