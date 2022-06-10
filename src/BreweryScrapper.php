@@ -11,7 +11,6 @@ class BreweryScrapper
     public const CLEAR = "clear";
     public const EXIT = "exit";
 
-    public array $allRecords = [];
     public array $data = [];
 
     public function dataToArray(string $name): array
