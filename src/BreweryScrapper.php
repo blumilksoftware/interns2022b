@@ -15,19 +15,8 @@ class BreweryScrapper
 
     public function collectData(): void
     {
-        $handle = fopen(__DIR__ . "/../tests/stubs/table.csv", "r");
-        $headers = fgetcsv($handle, separator: ";");
-
-        while (($row = fgetcsv($handle, separator: ";")) !== false) {
-            $rowValues = [];
-            foreach ($headers as $key => $value) {
-                $rowValues[$headers[$key]] = $row[$key];
-            }
-
-            $this->data[] = $rowValues;
-        }
-
-        fclose($handle);
+        $handle = file_get_contents(__DIR__ . "/../tests/stubs/table.json");
+        $this->data = json_decode($handle, true);
     }
 
     public function getBreweries(): array
@@ -54,7 +43,7 @@ class BreweryScrapper
 
     public function clearCache(): string
     {
-        $handle = __DIR__ . "/../tests/stubs/table.csv";
+        $handle = __DIR__ . "/../tests/stubs/table.json";
 
         if (unlink($handle)) {
             $message = "File was deleted successfully";
