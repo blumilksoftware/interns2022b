@@ -16,7 +16,7 @@ class BreweryScrapper
     public function collectData(): void
     {
         $handle = file_get_contents(__DIR__ . "/../tests/stubs/table.json");
-        $this->data = json_decode($handle, true);
+        $this->data = json_decode($handle, associative: true);
     }
 
     public function getBreweries(): array

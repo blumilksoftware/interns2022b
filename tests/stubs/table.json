@@ -1,15 +1,16 @@
-[ {
-    "no":"1",
-    "Name":"Browar Stu Mostów",
-    "Country":"Poland",
-    "City":"Wrocław",
-    "Provider":"BrauKon"
-},
-{
-    "no":"1",
-    "Name":"Browar Politechniki Wrocławskiej",
-    "Country":"Poland",
-    "City":"Wrocław",
-    "Provider":"Destila"
-}
-]
+[
+    {
+      "no": "1",
+      "name": "Browar Stu Mostów",
+      "country": "Poland",
+      "city": "Wrocław",
+      "provider": "BrauKon"
+    },
+    {
+      "no": "1",
+      "name": "Browar Politechniki Wrocławskiej",
+      "country": "Poland",
+      "city": "Wrocław",
+      "provider": "Destila"
+    }
+  ]
