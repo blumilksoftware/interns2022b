@@ -56,7 +56,7 @@ class BreweryScrapper
         return $message;
     }
 
-    public function putData(string $keyName): void      //w przyszłości tu będzie zaciąganie danych z www
+    public function putData(string $keyName): void
     {
         foreach ($this->data as $rowValue) {
             if ($rowValue["provider"] === $keyName) {
@@ -67,17 +67,17 @@ class BreweryScrapper
 
     public function rebuildCache(): void
     {
-        $timeStamp = ["[", date("Y-m-d h:i:s"), "]", "\n"];
+        $timeStamp = ["last Build:", "[", date("Y-m-d h:i:s"), "]", "\n"];
 
-        $logDirectory = __DIR__ . "/../tests/stubs/logs";
+        $logDirectory = __DIR__ . "/../tests/stubs";
         $tableDirectory = __DIR__ . "/../tests/stubs/table.json";
 
         if (!file_exists($logDirectory)) {
             mkdir($logDirectory);
         }
 
-        $filename = $logDirectory . "/" . date("Ymd") . ".log";
-        file_put_contents($filename, implode(" ", $timeStamp), FILE_APPEND);
+        $filename = $logDirectory . "/cacheChanges" . ".log";
+        file_put_contents($filename, implode(" ", $timeStamp));
 
         if (file_exists($tableDirectory)) {
             unlink($tableDirectory);
