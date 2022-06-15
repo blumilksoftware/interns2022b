@@ -79,14 +79,11 @@ class BreweryScrapper
         $filename = $logDirectory . "/cacheChanges" . ".log";
         file_put_contents($filename, implode(" ", $timeStamp));
 
-        if (file_exists($tableDirectory)) {
-            unlink($tableDirectory);
-        }
         $provider = $this->getProviders();
         for ($i = 0; $i < count($provider); $i++) {
             $this->putData($provider[$i]);
         }
-        file_put_contents($tableDirectory, json_encode($this->toFile, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), FILE_APPEND | LOCK_EX);
+        file_put_contents($tableDirectory, json_encode($this->toFile, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);
         file_put_contents($tableDirectory, "\n", FILE_APPEND);
     }
 }
