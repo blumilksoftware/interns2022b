@@ -19,6 +19,7 @@ while (true) {
         BreweryScrapper::SEARCH => "searching by brewery or city name",
         BreweryScrapper::LIST => "showing a list of providers",
         BreweryScrapper::CLEAR => "clearing cache",
+        BreweryScrapper::BUILD => "rebuild cache",
         BreweryScrapper::EXIT => "exit",
     ])->prompt();
 
@@ -26,6 +27,7 @@ while (true) {
         BreweryScrapper::SEARCH => $climate->table($breweryScrapper->getBreweries()),
         BreweryScrapper::LIST => $climate->out($breweryScrapper->getProviders()),
         BreweryScrapper::CLEAR => $climate->out($breweryScrapper->clearCache()),
+        BreweryScrapper::BUILD => $climate->out($breweryScrapper->rebuildCache()),
         BreweryScrapper::EXIT => exit(),
         default => $climate->error("unknown option"),
     };

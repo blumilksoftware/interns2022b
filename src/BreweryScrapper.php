@@ -9,9 +9,11 @@ class BreweryScrapper
     public const SHOW = "show";
     public const LIST = "list";
     public const CLEAR = "clear";
+    public const BUILD = "build";
     public const EXIT = "exit";
 
     public array $data = [];
+    public array $toFile = [];
 
     public function collectData(): void
     {
@@ -24,19 +26,19 @@ class BreweryScrapper
         $name = readline("Please provide brewery or city name:");
 
         $choosenData = [];
-        for ($row = 0; $row < count($this->data); $row++) {
-            if (in_array($name, $this->data[$row], strict: true)) {
-                $choosenData[] = $this->data[$row];
+        foreach ($this->data as $rowValue) {
+            if (in_array($name, $rowValue, strict: true)) {
+                $choosenData[] = $rowValue;
             }
         }
         return $choosenData;
-    }    
+    }
 
     public function getProviders(): array
     {
         $providers = [];
-        for ($row = 0; $row < count($this->data); $row++) {
-            $providers[] = $this->data[$row]["Provider"];
+        foreach ($this->data as $row => $rowValue) {
+            $providers[] = $this->data[$row]["provider"];
         }
         return $providers;
     }
@@ -52,5 +54,38 @@ class BreweryScrapper
         }
 
         return $message;
+    }
+
+    public function putData(string $keyName): void      //w przyszłości tu będzie zaciąganie danych z www
+    {
+        foreach ($this->data as $rowValue) {
+            if ($rowValue["provider"] === $keyName) {
+                $this->toFile[] = $rowValue;
+            }
+        }
+    }
+
+    public function rebuildCache(): void
+    {
+        $timeStamp = ["[", date("Y-m-d h:i:s"), "]", "\n"];
+
+        $logDirectory = __DIR__ . "/../tests/stubs/logs";
+        $tableDirectory = __DIR__ . "/../tests/stubs/table.json";
+
+        if (!file_exists($logDirectory)) {
+            mkdir($logDirectory);
+        }
+
+        $filename = $logDirectory . "/" . date("Ymd") . ".log";
+        file_put_contents($filename, implode(" ", $timeStamp), FILE_APPEND);
+
+        if (file_exists($tableDirectory)) {
+            unlink($tableDirectory);
+        }
+        $provider = $this->getProviders();
+        for ($i = 0; $i < 2; $i++) {
+            $this->putData($provider[$i]);
+        }
+        file_put_contents($tableDirectory, json_encode($this->toFile, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), FILE_APPEND | LOCK_EX);
     }
 }
