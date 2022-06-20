@@ -11,13 +11,14 @@ class BreweryScrapper
     public const CLEAR = "clear";
     public const BUILD = "build";
     public const EXIT = "exit";
+    protected const TABLE_DIRECTORY = __DIR__ . "/../tests/stubs/table.json";
 
     public array $data = [];
     public array $toFile = [];
 
     public function collectData(): void
     {
-        $handle = file_get_contents(__DIR__ . "/../tests/stubs/table.json");
+        $handle = file_get_contents(self::TABLE_DIRECTORY);
         $this->data = json_decode($handle, associative: true);
     }
 
@@ -45,9 +46,7 @@ class BreweryScrapper
 
     public function clearCache(): string
     {
-        $handle = __DIR__ . "/../tests/stubs/table.json";
-
-        if (unlink($handle)) {
+        if (unlink(self::TABLE_DIRECTORY)) {
             $message = "File was deleted successfully";
         } else {
             $message = "File doesn't exist";
@@ -70,7 +69,6 @@ class BreweryScrapper
         $timeStamp = ["last Build:", "[", date("Y-m-d h:i:s"), "]", "\n"];
 
         $logDirectory = __DIR__ . "/../tests/stubs";
-        $tableDirectory = __DIR__ . "/../tests/stubs/table.json";
 
         if (!file_exists($logDirectory)) {
             mkdir($logDirectory);
@@ -83,7 +81,7 @@ class BreweryScrapper
         foreach ($provider as $value) {
             $this->putData($value);
         }
-        file_put_contents($tableDirectory, json_encode($this->toFile, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);
-        file_put_contents($tableDirectory, "\n", FILE_APPEND);
+        file_put_contents(self::TABLE_DIRECTORY, json_encode($this->toFile, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);
+        file_put_contents(self::TABLE_DIRECTORY, "\n", FILE_APPEND);
     }
 }
