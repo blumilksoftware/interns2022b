@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace Interns2022B;
 
-class Breweries extends BreweryScrapper
+class Breweries
 {
     public const SEARCH = "choice";
 
-    public function getBreweries(): array
+    public function getBreweries(array $breweriesData): array
     {
         $name = readline("Please provide brewery or city name:");
 
         $chosenData = [];
-        foreach (parent::data as $rowValue) {
+        foreach ($breweriesData as $rowValue) {
             if (in_array($name, $rowValue, strict: true)) {
                 $chosenData[] = $rowValue;
             }

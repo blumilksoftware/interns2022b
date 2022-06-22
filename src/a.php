@@ -1,21 +1,23 @@
 <?php
 
-
 declare(strict_types=1);
 
 namespace Interns2022B;
 
-class a {
+class a
+{
+    protected const A = "a";
 
-    protected const A = 'a';
     protected Providers $providers;
     protected string $name;
 
-    public function a_self(){
+    public function a_self()
+    {
         return self::A;
     }
 
-    public function a_static(){
+    public function a_static()
+    {
         return static::A;
     }
 }

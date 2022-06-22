@@ -9,10 +9,9 @@ class BreweryScrapper
 {
     public const TEST = "test";
     public const EXIT = "exit";
-    public const TABLE_DIRECTORY = __DIR__ . "/../tests/stubs/table.json";
 
-    protected array $data = [];
     public array $toFile = [];
+    protected array $data = [];
 
     public function test(): string
     {
@@ -24,10 +23,11 @@ class BreweryScrapper
 
     public function collectData(): void
     {
-        $handle = file_get_contents(static::TABLE_DIRECTORY);
+        $handle = file_get_contents(Cache::TABLE_DIRECTORY);
         $this->data = json_decode($handle, associative: true);
     }
-    public function getData():array
+
+    public function getData(): array
     {
         return $this->data;
     }

@@ -16,5 +16,4 @@ class Providers
         }
         return $providers;
     }
-
 }

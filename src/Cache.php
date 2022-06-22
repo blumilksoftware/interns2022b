@@ -8,6 +8,7 @@ class Cache
 {
     public const CLEAR = "clear";
     public const BUILD = "build";
+    public const TABLE_DIRECTORY = __DIR__ . "/../tests/stubs/table.json";
 
     public array $toFile = [];
 
@@ -28,13 +29,13 @@ class Cache
             $this->putData($provider, $breweriesData);
         }
 
-        file_put_contents(BreweryScrapper::TABLE_DIRECTORY, json_encode($this->toFile, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);
-        file_put_contents(BreweryScrapper::TABLE_DIRECTORY, "\n", FILE_APPEND);
+        file_put_contents(self::TABLE_DIRECTORY, json_encode($this->toFile, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);
+        file_put_contents(self::TABLE_DIRECTORY, "\n", FILE_APPEND);
     }
 
     public function clearCache(): string
     {
-        if (unlink(BreweryScrapper::TABLE_DIRECTORY)) {
+        if (unlink(self::TABLE_DIRECTORY)) {
             $message = "File was deleted successfully";
         } else {
             $message = "File doesn't exist";
@@ -43,7 +44,7 @@ class Cache
         return $message;
     }
 
-    protected function createLogFile():void
+    protected function createLogFile(): void
     {
         $timeStamp = ["last Build:", "[", date("Y-m-d h:i:s"), "]", "\n"];
 
@@ -55,6 +56,5 @@ class Cache
 
         $filename = $logDirectory . "/cacheChanges" . ".log";
         file_put_contents($filename, implode(" ", $timeStamp));
-
     }
 }
