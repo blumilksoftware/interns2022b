@@ -22,6 +22,14 @@ $breweryScrapper->collectData();
 $breweriesData = $breweryScrapper->getData();
 $providers = $providerService->getProviders($breweriesData);
 
+$breweryFactory = new \Interns2022B\BreweryFactory();
+$test = $breweryFactory->create($breweriesData);
+
+/* @var \Interns2022B\VO\Brewery $x */
+$x = $test->first();
+$cityName = $x->city->name;
+$cityName2 = $x->city->name();
+
 while (true) {
     $climate->br();
     $breweryOption = $climate->radio("Choose data to fetch:", [
@@ -39,7 +47,6 @@ while (true) {
         Cache::CLEAR => $climate->out($cache->clearCache()),
         Cache::BUILD => $cache->rebuildCache($providers, $breweriesData),
         BreweryScrapper::EXIT => exit(),
-        BreweryScrapper::TEST => $climate->out($breweryScrapper->test()),
         default => $climate->error("unknown option"),
     };
 }

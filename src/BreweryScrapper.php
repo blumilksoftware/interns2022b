@@ -10,16 +10,7 @@ class BreweryScrapper
     public const TEST = "test";
     public const EXIT = "exit";
 
-    public array $toFile = [];
     protected array $data = [];
-
-    public function test(): string
-    {
-        $collection = new Collection($this->data);
-
-        $var = $collection->get(0);
-        return $var["name"];
-    }
 
     public function collectData(): void
     {
