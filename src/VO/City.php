@@ -7,9 +7,13 @@ class City
 
     public function __construct(
         public readonly string $name,
-    ) {}
+    )
+    {
+    }
 
-    public function name(){
+    public function getName(): string
+    {
         return $this->name;
     }
+
 }

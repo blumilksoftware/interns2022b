@@ -20,14 +20,19 @@ class BreweryFactory
     {
         $transformed = new Collection();
 
-        foreach ($breweryData as $row){
+        foreach ($breweryData as $row) {
 
             $brewery = new Brewery(
                 name: $row['name'],
                 city: new City(name: $row['city']),
-                provider: new Provider(name: $row['provider']),
-                country: new Country(name: $row['country']),
-            );
+                provider: new Provider(
+                    name: $row['provider'],
+                    breweries: new Collection((array)$row['name']),
+                ),
+                country: new Country(
+                    name: $row['country'],
+                    city: new Collection((array)$row['city']),
+                ));
             $transformed->push($brewery);
         }
 

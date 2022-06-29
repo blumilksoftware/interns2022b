@@ -10,14 +10,35 @@ class Brewery
     public string $id;
 
     public function __construct(
-        string $name,
-        public readonly City $city,
+        public readonly string   $name,
+        public readonly City     $city,
         public readonly Provider $provider,
-        public readonly Country $country,
+        public readonly Country  $country,
 
 
-){
-        $this->id = (string)rand(0,1000);
+    )
+    {
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+
+    public function getCity(): City
+    {
+        return $this->city;
+    }
+
+    public function getProvider(): Provider
+    {
+        return $this->provider;
+    }
+
+    public function getCountry(): Country
+    {
+        return $this->country;
     }
 
 }

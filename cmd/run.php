@@ -28,7 +28,7 @@ $test = $breweryFactory->create($breweriesData);
 /* @var \Interns2022B\VO\Brewery $x */
 $x = $test->first();
 $cityName = $x->city->name;
-$cityName2 = $x->city->name();
+$cityName2 = $x->city->getName();
 
 while (true) {
     $climate->br();
@@ -38,12 +38,11 @@ while (true) {
         Cache::CLEAR => "clearing cache",
         Cache::BUILD => "rebuild cache",
         BreweryScrapper::EXIT => "exit",
-        BreweryScrapper::TEST => "test",
     ])->prompt();
 
     match ($breweryOption) {
         Breweries::SEARCH => $climate->table($breweries->getBreweries($breweriesData)),
-        Providers::LIST => $climate->out($providers),
+        Providers::LIST => $climate->table((array)$providers),
         Cache::CLEAR => $climate->out($cache->clearCache()),
         Cache::BUILD => $cache->rebuildCache($providers, $breweriesData),
         BreweryScrapper::EXIT => exit(),

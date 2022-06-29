@@ -7,7 +7,6 @@ use Illuminate\Support\Collection;
 
 class BreweryScrapper
 {
-    public const TEST = "test";
     public const EXIT = "exit";
 
     protected array $data = [];
