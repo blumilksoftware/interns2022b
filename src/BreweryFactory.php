@@ -7,8 +7,6 @@ namespace Interns2022B;
 use Illuminate\Support\Collection;
 use Interns2022B\Models\Brewery;
 use Interns2022B\Models\City;
-use Interns2022B\Models\Country;
-use Interns2022B\Models\Provider;
 
 class BreweryFactory
 {
@@ -19,14 +17,8 @@ class BreweryFactory
             $brewery = new Brewery(
                 name: $row["name"],
                 city: new City(name: $row["city"]),
-                provider: new Provider(
-                    name: $row["provider"],
-                    breweries: new Collection((array)$row["name"]),
-                ),
-                country: new Country(
-                    name: $row["country"],
-                    cities: new Collection((array)$row["city"]),
-                ),
+                providers: new Collection((array)$row["provider"]),
+                countries: new Collection((array)$row["country"]),
             );
             $transformed->push($brewery);
         }
