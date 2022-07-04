@@ -3,36 +3,21 @@
 namespace Interns2022B;
 
 use Illuminate\Support\Collection;
-use Interns2022B\VO\Brewery;
-use Interns2022B\VO\City;
-use Interns2022B\VO\Country;
-use Interns2022B\VO\Provider;
+use Interns2022B\Models\City;
+use Interns2022B\Models\Brewery;
 
 class BreweryFactory
 {
-
-
-    /**
-     * @param array $breweryData
-     * @return Collection<Brewery>
-     */
-    public function create(array $breweryData): Collection
+    public function create(array $breweriesData): Collection
     {
         $transformed = new Collection();
-
-        foreach ($breweryData as $row) {
-
+        foreach ($breweriesData as $breweryData) {
             $brewery = new Brewery(
-                name: $row['name'],
-                city: new City(name: $row['city']),
-                provider: new Provider(
-                    name: $row['provider'],
-                    breweries: new Collection((array)$row['name']),
-                ),
-                country: new Country(
-                    name: $row['country'],
-                    city: new Collection((array)$row['city']),
-                ));
+                name: $breweryData["name"],
+                city: new City(name: $breweryData["city"]),
+                providers: new Collection((array)$breweryData["provider"]),
+                countries: new Collection((array)$breweryData["country"]),
+            );
             $transformed->push($brewery);
         }
 
