@@ -38,7 +38,9 @@ class Breweries
             }
         });
 
-        return $chosenData;
+        return ($chosenData->count()>1)
+                ? $chosenData
+                : new Collection([["Record doesn't exist"]]);
     }
 }
 
