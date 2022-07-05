@@ -10,15 +10,15 @@ use Interns2022B\Models\City;
 
 class BreweryFactory
 {
-    public function create(array $breweryData): Collection
+    public function create(array $breweriesData): Collection
     {
         $transformed = new Collection();
-        foreach ($breweryData as $row) {
+        foreach ($breweriesData as $breweryData) {
             $brewery = new Brewery(
-                name: $row["name"],
-                city: new City(name: $row["city"]),
-                providers: new Collection((array)$row["provider"]),
-                countries: new Collection((array)$row["country"]),
+                name: $breweryData["name"],
+                city: new City(name: $breweryData["city"]),
+                providers: new Collection((array)$breweryData["provider"]),
+                countries: new Collection((array)$breweryData["country"]),
             );
             $transformed->push($brewery);
         }

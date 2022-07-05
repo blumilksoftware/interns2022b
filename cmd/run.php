@@ -23,8 +23,9 @@ $breweryFactory = new BreweryFactory();
 $breweryScrapper->collectData();
 $breweriesData = $breweryScrapper->getData();
 $providers = $providerService->getProviders($breweriesData);
-$test = $breweryFactory->create($breweriesData);
-
+$breweriesFactory = $breweryFactory->create($breweriesData);
+//$janusz=($breweries->getBreweries($breweriesFactory));
+//var_dump($janusz);
 while (true) {
     $climate->br();
     $breweryOption = $climate->radio("Choose data to fetch:", [
@@ -36,7 +37,7 @@ while (true) {
     ])->prompt();
 
     match ($breweryOption) {
-        Breweries::SEARCH => $climate->table($breweries->getBreweries($breweriesData)),
+        Breweries::SEARCH => $climate->table($breweries->getBreweries($breweriesFactory)->toArray()),
         Providers::LIST => $climate->out($providers),
         Cache::CLEAR => $climate->out($cache->clearCache()),
         Cache::BUILD => $cache->rebuildCache($providers, $breweriesData),

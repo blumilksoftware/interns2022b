@@ -10,16 +10,6 @@ class Provider
 {
     public function __construct(
         public readonly string $name,
-        public Collection $breweries,
+        public readonly Collection $breweries,
     ) {}
-
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    public function getBreweries(): Collection
-    {
-        return $this->breweries;
-    }
 }

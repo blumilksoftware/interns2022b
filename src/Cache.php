@@ -10,7 +10,7 @@ class Cache
     public const BUILD = "build";
     public const TABLE_DIRECTORY = __DIR__ . "/../tests/stubs/table.json";
 
-    public array $toFile = [];
+    private array $toFile = [];
 
     public function putData(string $provider, array $breweriesData): void
     {
@@ -35,13 +35,9 @@ class Cache
 
     public function clearCache(): string
     {
-        if (unlink(self::TABLE_DIRECTORY)) {
-            $message = "File was deleted successfully";
-        } else {
-            $message = "File doesn't exist";
-        }
-
-        return $message;
+        return unlink(static::TABLE_DIRECTORY)
+            ? "File was deleted successfully"
+            : "File doesn't exist";
     }
 
     protected function createLogFile(): void
