@@ -22,8 +22,8 @@ $breweryFactory = new BreweryFactory();
 
 $breweryScrapper->collectData();
 $breweriesData = $breweryScrapper->getData();
-$providers = $providerService->getProviders($breweriesData);
-$test = $breweryFactory->create($breweriesData);
+$breweriesFactory = $breweryFactory->create($breweriesData);
+$providers = $providerService->getProviders($breweriesFactory);
 
 while (true) {
     $climate->br();
@@ -36,10 +36,10 @@ while (true) {
     ])->prompt();
 
     match ($breweryOption) {
-        Breweries::SEARCH => $climate->table($breweries->getBreweries($breweriesData)),
-        Providers::LIST => $climate->out($providers),
+        Breweries::SEARCH => $climate->table($breweries->getBreweries($breweriesFactory)->toArray()),
+        Providers::LIST => $climate->table($providers->toArray()),
         Cache::CLEAR => $climate->out($cache->clearCache()),
-        Cache::BUILD => $cache->rebuildCache($providers, $breweriesData),
+        Cache::BUILD => $cache->rebuildCache($providers, $breweriesFactory),
         BreweryScrapper::EXIT => exit(),
         default => $climate->error("unknown option"),
     };

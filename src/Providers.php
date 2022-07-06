@@ -4,16 +4,20 @@ declare(strict_types=1);
 
 namespace Interns2022B;
 
+use Illuminate\Support\Collection;
+use Interns2022B\Models\Brewery;
+
 class Providers
 {
     public const LIST = "list";
 
-    public function getProviders(array $data): array
+    public function getProviders(Collection $breweriesFactory): Collection
     {
-        $providers = [];
-        foreach ($data as $row => $rowValue) {
-            $providers[] = $data[$row]["provider"];
-        }
+        $providers = new Collection();
+        $breweriesFactory->each(function (Brewery $item) use ($providers): void {
+            $providers->push([$item->providers->first()]);
+        });
+
         return $providers;
     }
 }
