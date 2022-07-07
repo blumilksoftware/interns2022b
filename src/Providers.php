@@ -11,10 +11,15 @@ class Providers
 {
     public const LIST = "list";
 
-    public function getProviders(Collection $breweriesFactory): Collection
+    /**
+     * @return Collection
+     * @var Collection<Brewery> $breweries
+     */
+
+    public function getProviders(Collection $breweries): Collection
     {
         $providers = new Collection();
-        $breweriesFactory->each(function (Brewery $item) use ($providers): void {
+        $breweries->each(function (Brewery $item) use ($providers): void {
             $providers->push([$item->providers->first()]);
         });
 

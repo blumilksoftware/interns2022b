@@ -6,6 +6,7 @@ namespace Interns2022B;
 
 use Illuminate\Support\Collection;
 use Interns2022B\Models\Brewery;
+use JsonException;
 
 class Cache
 {
@@ -15,9 +16,14 @@ class Cache
 
     private array $toFile = [];
 
-    public function putData(string $provider, Collection $breweriesFactory): void
+    /**
+     * @param string $provider
+     * @var Collection<Brewery> $breweries
+     */
+
+    public function putData(string $provider, Collection $breweries): void
     {
-        $breweriesFactory->each(function (Brewery $item) use ($provider): void {
+        $breweries->each(function (Brewery $item) use ($provider): void {
             if ($item->providers->first() === $provider) {
                 $add = [
                     "name" => $item->name,
@@ -30,13 +36,20 @@ class Cache
         });
     }
 
-    public function rebuildCache(Collection $providers, Collection $breweriesFactory): void
+    /**
+     *
+     * @param Collection $providers
+     * @param Collection $breweries
+     * @throws JsonException
+     */
+
+    public function rebuildCache(Collection $providers, Collection $breweries): void
     {
         $this->createLogFile();
         $collapsedProviders = $providers->collapse();
 
         foreach ($collapsedProviders as $provider) {
-            $this->putData($provider, $breweriesFactory);
+            $this->putData($provider, $breweries);
         }
 
         file_put_contents(self::TABLE_DIRECTORY, json_encode($this->toFile, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);

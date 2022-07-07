@@ -17,8 +17,8 @@ class BreweryFactory
             $brewery = new Brewery(
                 name: $breweryData["name"],
                 city: new City(name: $breweryData["city"]),
-                providers: new Collection((array)$breweryData["provider"]),
-                countries: new Collection((array)$breweryData["country"]),
+                providers: new Collection([$breweryData["provider"]]),
+                countries: new Collection([$breweryData["country"]]),
             );
             $transformed->push($brewery);
         }

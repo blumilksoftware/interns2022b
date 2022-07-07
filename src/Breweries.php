@@ -11,14 +11,19 @@ class Breweries
 {
     public const SEARCH = "choice";
 
-    public function getBreweries(Collection $breweriesFactory): Collection
+    /**
+     * @return Collection
+     * @var Collection<Brewery> $breweries
+     */
+
+    public function getBreweries(Collection $breweries): Collection
     {
         $name = readline("Please provide brewery or city name:");
 
         $chosenData = new Collection();
         $chosenData->push(["Brewery name", "City", "Country", "Provider"]);
 
-        $breweriesFactory->each(function (Brewery $item) use ($chosenData, $name): void {
+        $breweries->each(function (Brewery $item) use ($chosenData, $name): void {
             if ($item->city->name === $name || $item->name === $name) {
                 $chosenData->push([$item->name, $item->city->name, $this->getCountry($item->countries), $this->getProvider($item->providers)]);
             }

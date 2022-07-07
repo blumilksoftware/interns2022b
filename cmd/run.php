@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Interns2022B\Breweries;
+use Interns2022B\BreweryData;
 use Interns2022B\BreweryFactory;
-use Interns2022B\BreweryScrapper;
 use Interns2022B\Cache;
 use Interns2022B\Providers;
 use League\CLImate\CLImate;
@@ -14,7 +14,7 @@ require_once __DIR__ . "/../vendor/autoload.php";
 $climate = new CLImate();
 $climate->green("Wow! My first simple PHP CLI application works!");
 
-$breweryScrapper = new BreweryScrapper();
+$breweryScrapper = new BreweryData();
 $cache = new Cache();
 $providerService = new Providers();
 $breweries = new Breweries();
@@ -22,8 +22,8 @@ $breweryFactory = new BreweryFactory();
 
 $breweryScrapper->collectData();
 $breweriesData = $breweryScrapper->getData();
-$breweriesFactory = $breweryFactory->create($breweriesData);
-$providers = $providerService->getProviders($breweriesFactory);
+$breweriesCollection = $breweryFactory->create($breweriesData);
+$providers = $providerService->getProviders($breweriesCollection);
 
 while (true) {
     $climate->br();
@@ -32,15 +32,15 @@ while (true) {
         Providers::LIST => "showing a list of providers",
         Cache::CLEAR => "clearing cache",
         Cache::BUILD => "rebuild cache",
-        BreweryScrapper::EXIT => "exit",
+        BreweryData::EXIT => "exit",
     ])->prompt();
 
     match ($breweryOption) {
-        Breweries::SEARCH => $climate->table($breweries->getBreweries($breweriesFactory)->toArray()),
+        Breweries::SEARCH => $climate->table($breweries->getBreweries($breweriesCollection)->toArray()),
         Providers::LIST => $climate->table($providers->toArray()),
         Cache::CLEAR => $climate->out($cache->clearCache()),
-        Cache::BUILD => $cache->rebuildCache($providers, $breweriesFactory),
-        BreweryScrapper::EXIT => exit(),
+        Cache::BUILD => $cache->rebuildCache($providers, $breweriesCollection),
+        BreweryData::EXIT => exit(),
         default => $climate->error("unknown option"),
     };
 }

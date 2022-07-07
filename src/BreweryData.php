@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Interns2022B;
 
-class BreweryScrapper
+class BreweryData
 {
     public const EXIT = "exit";
 
