@@ -16,6 +16,9 @@ class Cache
 
     private array $toFile = [];
 
+    /**
+     * @param Collection<Brewery> $breweries
+     */
     public function putData(string $provider, Collection $breweries): void
     {
         $breweries->each(function (Brewery $item) use ($provider): void {
@@ -32,6 +35,8 @@ class Cache
     }
 
     /**
+     * @param  Collection<Providers> $providers
+     * @param  Collection<Brewery> $breweries
      * @throws JsonException
      */
     public function rebuildCache(Collection $providers, Collection $breweries): void

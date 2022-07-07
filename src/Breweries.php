@@ -11,6 +11,9 @@ class Breweries
 {
     public const SEARCH = "choice";
 
+    /**
+     * @param Collection<Brewery> $breweries
+     */
     public function getBreweries(Collection $breweries): Collection
     {
         $name = readline("Please provide brewery or city name:");

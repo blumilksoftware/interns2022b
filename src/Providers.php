@@ -11,6 +11,9 @@ class Providers
 {
     public const LIST = "list";
 
+    /**
+     * @param Collection<Brewery> $breweries
+     */
     public function getProviders(Collection $breweries): Collection
     {
         $providers = new Collection();
