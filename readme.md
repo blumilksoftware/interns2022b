@@ -60,3 +60,25 @@ dcr php php cmd/run.php
 dcr php composer -V
 dcr php composer test
 ```
+---
+## Debugging
+
+Debugging php scripts from PHPStorm is not working due to some bug during input for radio menu.
+
+```shell
+docker-compose exec php ash -c "PHP_IDE_CONFIG="serverName=SomeName" php cmd/run.php"
+```
+
+Enter into the container
+```
+docker-comppose exec php ash
+```
+
+Write into terminal:
+```shell
+PHP_IDE_CONFIG="serverName=SomeName" php cmd/run.php
+```
+
+**SomeName** is the name of the server in PHPStorm (Settings->PHP->Servers), can be whatever you want, hostname may be localhost.\
+Add paths mappings (point whole project folder to `/application` (absolute path on server).\
+Enable listening for xdebug connections
