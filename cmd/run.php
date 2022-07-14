@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Interns2022B\Breweries;
 use Interns2022B\BreweryData;
 use Interns2022B\BreweryFactory;
+use Interns2022B\BreweryScrapper;
 use Interns2022B\Cache;
 use Interns2022B\Providers;
 use League\CLImate\CLImate;
@@ -14,14 +15,16 @@ require_once __DIR__ . "/../vendor/autoload.php";
 $climate = new CLImate();
 $climate->green("Wow! My first simple PHP CLI application works!");
 
-$breweryScrapper = new BreweryData();
+$breweryData = new BreweryData();
 $cache = new Cache();
 $providerService = new Providers();
 $breweries = new Breweries();
 $breweryFactory = new BreweryFactory();
+$breweryScrapper = new BreweryScrapper();
 
-$breweryScrapper->collectData();
-$breweriesData = $breweryScrapper->getData();
+$breweryScrapper->casparyScrapper();
+$breweryData->collectData();
+$breweriesData = $breweryData->getData();
 $breweriesCollection = $breweryFactory->create($breweriesData);
 $providers = $providerService->getProviders($breweriesCollection);
 
