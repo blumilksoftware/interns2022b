@@ -6,7 +6,6 @@ namespace Interns2022B;
 
 use Illuminate\Support\Collection;
 use Interns2022B\Models\Brewery;
-use JsonException;
 
 class Cache
 {
@@ -35,9 +34,9 @@ class Cache
     }
 
     /**
-     * @param  Collection<Providers> $providers
-     * @param  Collection<Brewery> $breweries
-     * @throws JsonException
+     * @param Collection<Providers> $providers
+     * @param Collection<Brewery> $breweries
+     * @throws JsonException|\JsonException
      */
     public function rebuildCache(Collection $providers, Collection $breweries): void
     {
@@ -50,6 +49,10 @@ class Cache
 
         file_put_contents(self::TABLE_DIRECTORY, json_encode($this->toFile, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);
         file_put_contents(self::TABLE_DIRECTORY, "\n", FILE_APPEND);
+
+        echo filesize(self::TABLE_DIRECTORY)
+            ? "File reconstructed successfully" . PHP_EOL
+            : "File doesn't exist" . PHP_EOL;
     }
 
     public function clearCache(): string

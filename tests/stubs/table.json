@@ -1,16 +1,1214 @@
 [
     {
-        "no": "1",
-        "name": "Browar Stu Mostów",
-        "country": "Poland",
-        "city": "Wrocław",
-        "provider": "BrauKon"
+        "name": "4 Pines Welcome To Brunswick",
+        "city": "Melbourne",
+        "country": "Australia",
+        "provider": "Caspary"
     },
     {
-        "no": "1",
-        "name": "Browar Politechniki Wrocławskiej",
+        "name": "Brewery Gomel",
+        "city": "Gomel",
+        "country": "Belarus",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brouwerij Haeseveld",
+        "city": "Melle",
+        "country": "Belgium",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Jägerhof Hausbrauerei",
+        "city": "Plovdiv",
+        "country": "Bulgaria",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Jägerhof Production Brewery",
+        "city": "Zhitnitsa",
+        "country": "Bulgaria",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Cerveceria Grassau",
+        "city": "Temuco",
+        "country": "Chile",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Bräuhaus Pudong",
+        "city": "Shanghai",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Bund Brewage Co. LTD.",
+        "city": "Shanghai",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Ciec",
+        "city": "Peking",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Grand Stage",
+        "city": "Tianjin",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Hacker Pschorr Beijing",
+        "city": "Beijing",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Intercontinental, Galleon Bar",
+        "city": "Shenzhen",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Jingling Hotel",
+        "city": "Nanjing",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Jiyang Hotel Brew Pub",
+        "city": "Jiyang Yin",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "MC Media Café",
+        "city": "Hongkong",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Bejing",
+        "city": "Peking",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Changsha",
+        "city": "Changsha",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Chengdu",
+        "city": "Chengdu",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Chongqing",
+        "city": "Chongqing",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Dalian I",
+        "city": "Dalian",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Dalian II",
+        "city": "Dalian",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Expo Shanghai",
+        "city": "Shanghai",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Guangzhou",
+        "city": "Guangzhou",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Guiyang",
+        "city": "Guiyang",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Harbin",
+        "city": "Harbin",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Nanjing",
+        "city": "Nanjing",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Quingdao",
+        "city": "Quingdao",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Sanya",
+        "city": "Sanya",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Shanghai",
+        "city": "Shanghai",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Shenyang",
+        "city": "Shenyang",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Shenzhen",
+        "city": "Shenzhen",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Suzhou",
+        "city": "Suzhou",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Taiyuan",
+        "city": "Taiyuan",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Wuxi",
+        "city": "Wuxi",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Xi'an",
+        "city": "Xi'an",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Xiamen",
+        "city": "Xiamen",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Yinchuan",
+        "city": "Yinchuan",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Shenyang Green Garden",
+        "city": "Shenyang",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Shenzhen Anhua Wineshop",
+        "city": "Shenzhen",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "The beer factory",
+        "city": "Sanya",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Wochinger",
+        "city": "Hangzhou",
+        "country": "China",
+        "provider": "Caspary"
+    },
+    {
+        "name": "\"Check Inn\"",
+        "city": "Egelsbach",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "1516",
+        "city": "Ingolstadt",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Alter Bahnhof Bigge",
+        "city": "Olsberg",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Altstadtbräu",
+        "city": "Heidelberg",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Aschingers Braukeller",
+        "city": "Berlin",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Badisch Brauhaus",
+        "city": "Karlsruhe",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Barfüsser Heilbronn",
+        "city": "Heilbronn",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Barfüsser Nuremberg",
+        "city": "Nuremberg",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Barfüsser Ulm",
+        "city": "Ulm",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Bio Braumanufaktur",
+        "city": "Schmilka",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brauhaus Hanseat",
+        "city": "Hamburg",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brauhaus Spandau",
+        "city": "Berlin",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brauhaus Zils",
+        "city": "Naurath\/Eifel",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "BräuWirt",
+        "city": "Weiden",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Burggraf Bräu",
+        "city": "Bensheim",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Der Bräu im TÜ 8",
+        "city": "Stuttgart",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Der Vogelbräu",
+        "city": "Karlsruhe",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Eisgrub-Bräu",
+        "city": "Mainz",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Eiswerk",
+        "city": "Munich",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Fürstenberg Brauwerk",
+        "city": "Donaueschingen",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Göcklinger Hausbräu",
+        "city": "Göcklingen",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Gravensteiner Brauhaus",
+        "city": "Hamburg",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Gröninger Privatbrauerei",
+        "city": "Hamburg",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "H. Bessmann",
+        "city": "Gütersloh",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Hansen-Bräu",
+        "city": "Flensburg",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Hausbrauerei zum Pfaffen",
+        "city": "Cologne",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Heinerbräu",
+        "city": "Marienfeld\/Harsewinkel",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Homburger Brauhaus",
+        "city": "Homburg\/Saar",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Hövels, Homebrewery",
+        "city": "Dortmund",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Husums Brauhaus",
+        "city": "Husum",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Isartaler Brauhaus",
+        "city": "Pullach",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Kaltentaler Brauhaus",
+        "city": "Aufkirch",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Lindenbräu",
+        "city": "Berlin",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Luisenbräu",
+        "city": "Berlin",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Martinsbräu",
+        "city": "Freiburg",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Maxbräu, Hotel Maximilian",
+        "city": "Oberammergau",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Mittweidaer Löwenbräu",
+        "city": "Mittweida",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Neckarmüller-Bräu",
+        "city": "Tübingen",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Eco Market Werratal",
+        "city": "Vachdorf",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Munich",
+        "city": "Munich",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Nockherberg",
+        "city": "Munich",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Ratsbräu",
+        "city": "Darmstadt",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Rossknechtsbräu",
+        "city": "Ludwigsburg",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Schadt's Pubbrewery",
+        "city": "Braunschweig",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Schiller Bräu",
+        "city": "Munich",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Schlossbrauerei",
+        "city": "Odelzhausen",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Schweinfurter Gasthausbrauerei",
+        "city": "Schweinfurt",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Turmbrauhaus",
+        "city": "Chemnitz",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Valleyer Schloßbräu",
+        "city": "Valley",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Wenkers am Markt",
+        "city": "Dortmund",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Zum Alten Dessauer",
+        "city": "Dessau",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Zum Löwen",
+        "city": "Braunschweig",
+        "country": "Germany",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brasserie de Lutterbach",
+        "city": "Lutterbach",
+        "country": "France",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Taverne du brasseur",
+        "city": "Amneville",
+        "country": "France",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Mont Hardi",
+        "city": "Azé",
+        "country": "France",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Freedom Brewery Ltd.",
+        "city": "Staffordshire",
+        "country": "United Kingdom",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Pacific Oriental Restaurant",
+        "city": "London",
+        "country": "United Kingdom",
+        "provider": "Caspary"
+    },
+    {
+        "name": "The Soho Brewery Co.",
+        "city": "London",
+        "country": "United Kingdom",
+        "provider": "Caspary"
+    },
+    {
+        "name": "7 Degree Brauhaus",
+        "city": "Gurgaon",
+        "country": "India",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Hope Beer",
+        "city": "Dublin, Ireland",
+        "country": "Ireland",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Birreria Blues",
+        "city": "Cividate Al Piano",
+        "country": "Italy",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Birreria Pedavena",
+        "city": "Trento",
+        "country": "Italy",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Duel Beer S.R.L.",
+        "city": "Naples",
+        "country": "Italy",
+        "provider": "Caspary"
+    },
+    {
+        "name": "König Ludwig Bier-Keller N°1",
+        "city": "Campobasso",
+        "country": "Italy",
+        "provider": "Caspary"
+    },
+    {
+        "name": "La Officina della Birra",
+        "city": "Milan",
+        "country": "Italy",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Maivisto",
+        "city": "Sedrina (Bergamo)",
+        "country": "Italy",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Novecento Brewpub",
+        "city": "Casatenovo",
+        "country": "Italy",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Bräuhaus Miyamori Co. Ltd.",
+        "city": "Iwate-Ken",
+        "country": "Japan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Hidaka Beer Co. Ltd.",
+        "city": "Hokkaido",
+        "country": "Japan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Inawashiro Beer Factory",
+        "city": "Fukushima",
+        "country": "Japan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Isesaki Brewery\/Restaurant",
+        "city": "Isesaki",
+        "country": "Japan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Kirin brewery Co. Ltd.",
+        "city": "Yokohama",
+        "country": "Japan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Okhotsk Brewery",
+        "city": "Sapporo",
+        "country": "Japan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Otaru Soko Nr. 1",
+        "city": "Sapporo",
+        "country": "Japan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Shimabara Meisui Brewery Co. Ltd.",
+        "city": "Nagasaki",
+        "country": "Japan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Sumidagawa Brewery Pub",
+        "city": "Tokyo",
+        "country": "Japan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Takikawa Greens K.K.",
+        "city": "Hokkaido",
+        "country": "Japan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Tohaku Brewpub",
+        "city": "Tattori",
+        "country": "Japan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Mill Street Brew Pub",
+        "city": "St. John´s",
+        "country": "Canada",
+        "provider": "Caspary"
+    },
+    {
+        "name": "\"Azat\" Cocern",
+        "city": "Akmola",
+        "country": "Kazakhstan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "\"Madi\"",
+        "city": "Pavlodar",
+        "country": "Kazakhstan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Bräuhaus \"Dalny\"",
+        "city": "Arkalyk",
+        "country": "Kazakhstan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brauhaus Celinograd",
+        "city": "Astana",
+        "country": "Kazakhstan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Dschanalik",
+        "city": "Akmola",
+        "country": "Kazakhstan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Sowchos s.m. Kirowa",
+        "city": "Astana",
+        "country": "Kazakhstan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Uptk Tresta",
+        "city": "Almaty",
+        "country": "Kazakhstan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Caspary Pub Brewery",
+        "city": "Deagu",
+        "country": "Korea",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Devil's Door",
+        "city": "Seoul",
+        "country": "Korea",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Goose Island Brewhouse",
+        "city": "Seoul",
+        "country": "Korea",
+        "provider": "Caspary"
+    },
+    {
+        "name": "New Young Nam Hotel",
+        "city": "Daegu",
+        "country": "Korea",
+        "provider": "Caspary"
+    },
+    {
+        "name": "O'Kim's, Coex Convention Center",
+        "city": "Seoul",
+        "country": "Korea",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brasserie de Wiltz",
+        "city": "Wiltz",
+        "country": "Luxembourg",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Keller Holz Brauerei",
+        "city": "Chisinau",
+        "country": "Moldova",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brouwerij Hoop",
+        "city": "Amsterdam",
+        "country": "Netherlands",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Ootmarsummer Bierbrouwerij Heupink & Co",
+        "city": "Ootmarsum",
+        "country": "Netherlands",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Mack Ölbryggeri AS, brewery",
+        "city": "Tromsø",
+        "country": "Norway",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Bierlokal",
+        "city": "Dornbirn",
+        "country": "Austria",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brauerei Gmachl",
+        "city": "Bergheim near Salzburg",
+        "country": "Austria",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Hofbräu Kaltenhausen",
+        "city": "Kaltenhausen",
+        "country": "Austria",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Stiegl's Ambulanz",
+        "city": "Vienna",
+        "country": "Austria",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Manila",
+        "city": "Manila",
+        "country": "Philippines",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Browar PG4",
+        "city": "Gdansk",
         "country": "Poland",
-        "city": "Wrocław",
-        "provider": "Destila"
+        "provider": "Caspary"
+    },
+    {
+        "name": "Alpenhaus",
+        "city": "St. Petersburg",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "APK \"Annenskij\"",
+        "city": "Anna, Voronezh region",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Beckstar",
+        "city": "Selo Konstantinovo",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Biergarten Munhell",
+        "city": "Lipetsk",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Becker Brewery",
+        "city": "Novorossiysk, Krasnodar region",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brüdazz",
+        "city": "St- Petersburg",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brewery Komsomolk on Amur",
+        "city": "Khabarovsk Krai",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brewery Lesosibirsk",
+        "city": "Krasnoyarsk Krai",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brewery Moscow",
+        "city": "Moscow",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brewery Tolyatti",
+        "city": "Tolyatti",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brewery Yakutsk",
+        "city": "Sakha",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brewery Boguchani",
+        "city": "Krasnoyarsk Krai",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Bräuhaus Cafe Angara",
+        "city": "Moscow",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brewery De Kastri",
+        "city": "Khabarovsk Krai",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brewery Kogalym",
+        "city": "Yugra",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brewery Volgograd",
+        "city": "Volgograd",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brauplatz Izhevsk",
+        "city": "Izhevsk",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brezel Brauhaus",
+        "city": "Miass",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Caspary Bräu",
+        "city": "Obninsk",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Chester Brewery",
+        "city": "Bryansk",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Dubinin",
+        "city": "Ulyanovsk",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Grad Petrov",
+        "city": "St. Petersburg",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Karl & Friedrich",
+        "city": "St. Petersburg",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Khmel Bar",
+        "city": "Kuznetsk",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Max Bräu",
+        "city": "Vladimir City",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "North Caucasus Railway",
+        "city": "Rostov on Don",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Chelyabinsk",
+        "city": "Chelyabinsk",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Rausch Bräu",
+        "city": "Tuymazy",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Rossoschanskoe Po",
+        "city": "Rossosh",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Vladivostok",
+        "city": "Vladivostok",
+        "country": "Russia",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Bräuhaus Visby",
+        "city": "Visby\/Gotland",
+        "country": "Sweden",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Gamla Stans Bryggerie AB",
+        "city": "Stockholm",
+        "country": "Sweden",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Burgdorfer Brewery",
+        "city": "Kornhaus\/Burgdorf",
+        "country": "Switzerland",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Ciao.Beer",
+        "city": "Avegno",
+        "country": "Switzerland",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Singapore II",
+        "city": "Singapore",
+        "country": "Singapore",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Taipei",
+        "city": "Taoyuan",
+        "country": "Taiwan",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brewpavilion",
+        "city": "Bangkok",
+        "country": "Thailand",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Expo Dom",
+        "city": "Bangkok",
+        "country": "Thailand",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Hartmannsdorfer Bräuhaus",
+        "city": "Bangkok",
+        "country": "Thailand",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Kronen Bräuhaus",
+        "city": "Khon Kaen",
+        "country": "Thailand",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus Bangkok",
+        "city": "Bangkok",
+        "country": "Thailand",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Petchburi Entertainment Co. Ltd.",
+        "city": "Bangkok",
+        "country": "Thailand",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Royal Hofbräuhaus Bangkok",
+        "city": "Bangkok",
+        "country": "Thailand",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Bräuhaus Liberec",
+        "city": "Liberec",
+        "country": "Czech Republic",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Hotel Pegas Brno",
+        "city": "Brno",
+        "country": "Czech Republic",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Novomestski Pivovar",
+        "city": "Prague",
+        "country": "Czech Republic",
+        "provider": "Caspary"
+    },
+    {
+        "name": "U Fleků",
+        "city": "Prague",
+        "country": "Czech Republic",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Torch",
+        "city": "Istanbul",
+        "country": "Turkey",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Brewery",
+        "city": "Kiev",
+        "country": "Ukraine",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Open Place",
+        "city": "Montevideo",
+        "country": "Uruguay",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Baltimore Brewing Co.",
+        "city": "Baltimore",
+        "country": "USA",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Beau Rivage Coast Brewing",
+        "city": "Biloxi",
+        "country": "USA",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Crop Bistro and Brewery",
+        "city": "Stowe",
+        "country": "USA",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Old Harbor Brewery",
+        "city": "Puerto Rico, San Juan",
+        "country": "USA",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Pacific Universal Brewing",
+        "city": "Guam",
+        "country": "USA",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Paulaner Bräuhaus NYC",
+        "city": "New York City",
+        "country": "USA",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Sudwerk II",
+        "city": "Davis, California",
+        "country": "USA",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Sudwerk II",
+        "city": "Sacramento, California",
+        "country": "USA",
+        "provider": "Caspary"
+    },
+    {
+        "name": "Bawaris Kaspari",
+        "city": "Tashkent",
+        "country": "Uzbekistan",
+        "provider": "Caspary"
     }
 ]
