@@ -20,11 +20,9 @@ $cache = new Cache();
 $providerService = new Providers();
 $breweries = new Breweries();
 $breweryFactory = new BreweryFactory();
-
 $breweryScrapper = new BreweryScrapper();
 
 $breweryScrapper->casparyScrapper();
-
 $breweryData->collectData();
 $breweriesData = $breweryData->getData();
 $breweriesFactory = $breweryFactory->create($breweriesData);
